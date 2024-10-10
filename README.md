@@ -16,7 +16,7 @@ To run the program, you need to provide a PPM image with the following format:
         The pixel values should be listed after the above information.
 
 
-Instructions for Running the Program
+# Instructions for Running the Program
 
 To compile and run the program, follow the steps below:
 
@@ -28,7 +28,7 @@ Compile the program using the following command:
 
 Or use any other command you prefer.
 
-eplace <your_program_name> with your desired name for the executable.
+Replace <your_program_name> with your desired name for the executable.
 
 After successful compilation, run the program with the following command:
 
