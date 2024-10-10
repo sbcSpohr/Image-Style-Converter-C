@@ -16,7 +16,7 @@ To run the program, you need to provide a PPM image with the following format:
    The pixel values should be listed after the above information.
 
          P3          - Format
-       1280 853    - Dimensions
+         1280 853    - Dimensions
          255         - Max value
          4          
          5
