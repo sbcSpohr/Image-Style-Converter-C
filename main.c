@@ -14,7 +14,7 @@ void imageInfo(FILE *fp, int *coluna, int *linha, int *val);
 
 int main() {
 
-     int op; // Variável para armazenar a opção escolhida
+     int op;
     char image_name[100];
     
     printf("\n---------------- EDIT IMAGE MENU ----------------\n\n");
