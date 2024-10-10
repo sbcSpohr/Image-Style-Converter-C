@@ -29,7 +29,7 @@ int main() {
             break;
         }
 
-        if (op < 1 || op > 5) {
+        if (op < 1 || op > 4) {
             printf("\nInvalid option. Please try again.\n");
             continue;
         }
@@ -93,6 +93,7 @@ void processImage(FILE *fp, int style) {
 
                 default:
                     printf("Invalid option.");
+                    break;
             }
         }
     }
