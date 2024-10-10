@@ -14,7 +14,7 @@ void imageInfo(FILE *fp, int *coluna, int *linha, int *val);
 
 int main() {
 
-     int op;
+     int op; // Variável para armazenar a opção escolhida
     char image_name[100];
     
     printf("\n---------------- EDIT IMAGE MENU ----------------\n\n");
@@ -70,7 +70,9 @@ void processImage(FILE *fp, int style) {
 
             if (style == 1) {
        
-                matriz[i][j].r = matriz[i][j].g = matriz[i][j].b = (r * 0.30) + (g * 0.59) + (b * 0.11);
+                matriz[i][j].r = (r * 0.30) + (g * 0.59) + (b * 0.11);
+                matriz[i][j].g = (r * 0.30) + (g * 0.59) + (b * 0.11);
+                matriz[i][j].b = (r * 0.30) + (g * 0.59) + (b * 0.11);
 
             } else if (style == 2) {
         
