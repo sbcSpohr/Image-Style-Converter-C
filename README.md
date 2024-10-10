@@ -15,16 +15,16 @@ To run the program, you need to provide a PPM image with the following format:
 4. Subsequent Lines:
    The pixel values should be listed after the above information.
 
-P3          - Format
-1280 853    - Dimensions
-255         - Max value
-4          
-5
-7
-4
-5
-7
-...
+         P3          - Format
+       1280 853    - Dimensions
+         255         - Max value
+         4          
+         5
+         7
+         4
+         5
+         7
+         ...
 
 
 # Instructions for Running the Program
