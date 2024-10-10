@@ -20,21 +20,21 @@ Instructions for Running the Program
 
 To compile and run the program, follow the steps below:
 
-    Open the terminal in the directory where your main.c file is located.
+Open the terminal in the directory where your main.c file is located.
 
-    Compile the program using the following command:
+Compile the program using the following command:
 
-        gcc -o <your_program_name> main.c
+    gcc -o <your_program_name> main.c
 
-    Or use any other command you prefer.
+Or use any other command you prefer.
 
-    Replace <your_program_name> with your desired name for the executable.
+eplace <your_program_name> with your desired name for the executable.
 
-    After successful compilation, run the program with the following command:
+After successful compilation, run the program with the following command:
 
-        ./<your_program_name>
+    ./<your_program_name>
         
-    Make sure to replace <your_program_name> with the name you chose.
+Make sure to replace <your_program_name> with the name you chose.
 
 
 Program Output
