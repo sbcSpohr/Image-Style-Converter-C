@@ -92,7 +92,7 @@ void processImage(FILE *fp, int style) {
                     break;
 
                 default:
-                    printf("Invalid option.")
+                    printf("Invalid option.");
             }
         }
     }
