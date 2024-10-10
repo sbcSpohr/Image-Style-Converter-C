@@ -13,8 +13,7 @@ void processImage(FILE *fp, int style);
 void imageInfo(FILE *fp, int *coluna, int *linha, int *val);
 
 int main() {
-
-     int op; // Variável para armazenar a opção escolhida
+    int op; 
     char image_name[100];
     
     printf("\n---------------- EDIT IMAGE MENU ----------------\n\n");
@@ -23,16 +22,15 @@ int main() {
 
     while (1) {
         menu();
-
         scanf("%d", &op);
 
         if (op == 0) {
-            printf("Finishing program.\n");
+            printf("\nEnding program.\n");
             break;
         }
 
-        if (op < 1 || op > 3) {
-            printf("Invalid option. Please try again.\n");
+        if (op < 1 || op > 5) {
+            printf("\nInvalid option. Please try again.\n");
             continue;
         }
 
@@ -46,7 +44,7 @@ void openImage(char image_name[], int style) {
     FILE *fp = fopen(image_name, "r");
 
     if (fp == NULL) {
-        printf("\nError opening the file %s\n: ", image_name);
+        printf("\nError opening the file %s\n", image_name);
         return;
     }
 
@@ -68,27 +66,33 @@ void processImage(FILE *fp, int style) {
         for (int j = 0; j < coluna; j++) {
             fscanf(fp, "%d %d %d", &r, &g, &b);
 
-            if (style == 1) {
-       
-                matriz[i][j].r = (r * 0.30) + (g * 0.59) + (b * 0.11);
-                matriz[i][j].g = (r * 0.30) + (g * 0.59) + (b * 0.11);
-                matriz[i][j].b = (r * 0.30) + (g * 0.59) + (b * 0.11);
+            switch (style) {
+                case 1:
+                    matriz[i][j].r = (r * 0.30) + (g * 0.59) + (b * 0.11);
+                    matriz[i][j].g = (r * 0.30) + (g * 0.59) + (b * 0.11);
+                    matriz[i][j].b = (r * 0.30) + (g * 0.59) + (b * 0.11);
+                    break;
 
-            } else if (style == 2) {
-        
-                matriz[i][j].r = 255 - r;
-                matriz[i][j].g = 255 - g;
-                matriz[i][j].b = 255 - b;
+                case 2: 
+                    matriz[i][j].r = 255 - r;
+                    matriz[i][j].g = 255 - g;
+                    matriz[i][j].b = 255 - b;
+                    break;
 
-            } else if (style == 3) {
- 
-                matriz[i][j].r = (r * 0.393) + (g * 0.769) + (b * 0.189);
-                matriz[i][j].g = (r * 0.349) + (g * 0.686) + (b * 0.168);
-                matriz[i][j].b = (r * 0.272) + (g * 0.534) + (b * 0.131);
+                case 3: 
+                    matriz[i][j].r = (r * 0.393) + (g * 0.769) + (b * 0.189);
+                    matriz[i][j].g = (r * 0.349) + (g * 0.686) + (b * 0.168);
+                    matriz[i][j].b = (r * 0.272) + (g * 0.534) + (b * 0.131);
+                    break;
 
-                if (matriz[i][j].r > 255) matriz[i][j].r = 255;
-                if (matriz[i][j].g > 255) matriz[i][j].g = 255;
-                if (matriz[i][j].b > 255) matriz[i][j].b = 255;
+                case 4: 
+                    matriz[i][j].r = 255 - ((r * 0.30) + (g * 0.59) + (b * 0.11));
+                    matriz[i][j].g = 255 - ((r * 0.30) + (g * 0.59) + (b * 0.11));
+                    matriz[i][j].b = 255 - ((r * 0.30) + (g * 0.59) + (b * 0.11));
+                    break;
+
+                default:
+                    printf("Invalid option.")
             }
         }
     }
@@ -125,8 +129,9 @@ void processImage(FILE *fp, int style) {
     }
     free(matriz);
 
-    printf("Image successfully processed and saved as output_image.ppm\n");
+    printf("Image successfully processed\n");
 }
+
 
 void imageInfo(FILE *fp, int *coluna, int *linha, int *val) {
     char tipoImg[3];
@@ -137,8 +142,10 @@ void imageInfo(FILE *fp, int *coluna, int *linha, int *val) {
 
 void menu() {
     printf("\n------------ EDIT IMAGE MENU ------------\n\n");
-    printf("\n[1] - Convert image to black and white.");
-    printf("\n[2] - Convert image to X-ray.");
-    printf("\n[0] - Finish the program.");
-    printf("\nOption: ");
+    printf("[1] - Convert image to grey.\n");
+    printf("[2] - Convert image to negative.\n");
+    printf("[3] - Convert image to aged.\n");
+    printf("[4] - Convert image to X-ray.\n");
+    printf("[0] - Closing the program.\n");
+    printf("Option: ");
 }
